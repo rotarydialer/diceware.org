@@ -12,26 +12,26 @@ export default function Wrapper( props ) {
   return (
     <>
       <Box maw={200} mx="auto">
-        <Text mt="md" size="sm">
-          phrases: { endNumPhrases }
+        <Text mt="md" size="md">
+          <b>phrases:</b> { endNumPhrases }
         </Text>
         <Slider 
           value={numPhrases} 
           min={1}
-          max={30}
+          max={25}
           onChange={setNumPhrases} 
           onChangeEnd={setEndNumPhrases} 
         />
       </Box>
 
       <Box maw={200} mx="auto">
-        <Text mt="md" size="sm">
-          words per phrase: { endNumWords }
+        <Text mt="md" size="md">
+          <b>words per phrase:</b> { endNumWords }
         </Text>
         <Slider 
           value={numWords} 
           min={2}
-          max={20}
+          max={12}
           onChange={setNumWords} 
           onChangeEnd={setEndNumWords} 
         />

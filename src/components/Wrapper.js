@@ -39,8 +39,6 @@ export default function Wrapper( props ) {
         </Box>
       </div>
 
-      {/* <h2 className="phrasesHeader">Here { endNumPhrases > 1 ? 'are' : 'is' } { endNumPhrases } phrase{ endNumPhrases > 1 ? 's' : ''} with { endNumWords } word{ endNumWords > 1 ? 's' : ''}{ endNumPhrases > 1 ? ' each' : ''}:</h2> */}
-
       <div className='phrases'>
         <Phrases wordCount={ endNumWords } phraseCount = { endNumPhrases } />
       </div>

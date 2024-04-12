@@ -1,9 +1,18 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Source Code Pro', monospace;
   font-size: large;
   line-height: 1.6;
   color: #eee;
   background-color: #06131a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 code {
@@ -11,10 +20,67 @@ code {
     monospace;
 }
 
+
+a {
+  color: rgb(171, 227, 241);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: rgb(171, 227, 241);
+}
+
+.content {
+  flex: 1;
+}
+
 .siteTitle {
-  font-size: large;
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 0px;
 }
 
 .siteTagline {
-  font-size: medium;
+  font-size: large;
+}
+
+.phrase {
+  font-size: larger;
+  margin-left: 1.83rem;
+  margin-bottom: 0.5rem;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Makes .App take at least the height of the viewport */
+  width: 100%;
+  align-items: center;
+}
+
+.App-header {
+  padding: 0.3rem;
+  padding-left: 0.7rem;
+  display: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  color: white;
+}
+
+.App-header a {
+  color: rgb(171, 227, 241);
+  text-decoration: underline;
+}
+
+.App-header a:visited {
+  color: rgb(171, 227, 241);
+}
+
+.App-footer {
+  background-color: #06131a;
+  padding: 20px;
+  text-align: left;
+  width: 100%;
 }

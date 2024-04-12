@@ -10,36 +10,40 @@ export default function Wrapper( props ) {
   const [endNumPhrases, setEndNumPhrases] = useState(3);
 
   return (
-    <>
-      <Box maw={200} mx="auto">
-        <Text mt="md" size="md">
-          <b>phrases:</b> { endNumPhrases }
-        </Text>
-        <Slider 
-          value={numPhrases} 
-          min={1}
-          max={25}
-          onChange={setNumPhrases} 
-          onChangeEnd={setEndNumPhrases} 
-        />
-      </Box>
+    <div className="wrapper">
+      <div className="sliders">
+        <Box miw={250}>
+          <Text mt="md" size="md">
+            <b>phrases:</b> { endNumPhrases }
+          </Text>
+          <Slider 
+            value={numPhrases} 
+            min={1}
+            max={25}
+            onChange={setNumPhrases} 
+            onChangeEnd={setEndNumPhrases} 
+          />
+        </Box>
 
-      <Box maw={200} mx="auto">
-        <Text mt="md" size="md">
-          <b>words per phrase:</b> { endNumWords }
-        </Text>
-        <Slider 
-          value={numWords} 
-          min={2}
-          max={12}
-          onChange={setNumWords} 
-          onChangeEnd={setEndNumWords} 
-        />
-      </Box>
+        <Box miw={120}>
+          <Text mt="md" size="md">
+            <b>words per phrase:</b> { endNumWords }
+          </Text>
+          <Slider 
+            value={numWords} 
+            min={2}
+            max={12}
+            onChange={setNumWords} 
+            onChangeEnd={setEndNumWords} 
+          />
+        </Box>
+      </div>
 
-      <div className='phraseWrapper'>
+      {/* <h2 className="phrasesHeader">Here { endNumPhrases > 1 ? 'are' : 'is' } { endNumPhrases } phrase{ endNumPhrases > 1 ? 's' : ''} with { endNumWords } word{ endNumWords > 1 ? 's' : ''}{ endNumPhrases > 1 ? ' each' : ''}:</h2> */}
+
+      <div className='phrases'>
         <Phrases wordCount={ endNumWords } phraseCount = { endNumPhrases } />
       </div>
-    </>
+    </div>
   )
 }

@@ -1,6 +1,6 @@
 body {
   font-family: 'Source Code Pro', monospace;
-  font-size: large;
+  font-size: medium;
   line-height: 1.6;
   color: #eee;
   background-color: #06131a;
@@ -9,4 +9,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.siteTitle {
+  font-size: large;
+}
+
+.siteTagline {
+  font-size: medium;
 }

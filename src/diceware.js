@@ -13,7 +13,7 @@ const createWordMap = () => {
 let codeWordMap = new Map();
 codeWordMap = createWordMap();
 
-export const countWords = () => {
+export const countTokens = () => {
   const numTokens = Object.entries(wordlist).length;
 
   createWordMap();

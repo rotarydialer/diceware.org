@@ -17,8 +17,22 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
+
+```
+$ npm test
+
+ PASS  src/diceware.test.js
+ PASS  src/components/Phrases.test.js
+
+Test Suites: 2 passed, 2 total
+Tests:       9 passed, 9 total
+Snapshots:   0 total
+Time:        0.98 s, estimated 1 s
+Ran all test suites.
+
+Watch Usage: Press w to show more.
+```
 
 ### `npm run build`
 

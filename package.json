@@ -1,6 +1,6 @@
 {
   "name": "diceware.org",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@mantine/core": "^7.7.2",

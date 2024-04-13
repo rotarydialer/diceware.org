@@ -8,7 +8,10 @@ const Phrases = React.memo(({ wordCount, phraseCount }) => {
 
   return (
     <div>
-      <h2 className="phrasesHeader">Here { phraseCount > 1 ? 'are' : 'is' } { phraseCount } phrase{ phraseCount > 1 ? 's' : ''} with { wordCount } word{ wordCount > 1 ? 's' : ''}{ phraseCount > 1 ? ' each' : ''}:</h2>
+      <h2 className="phrasesHeader">
+        Here { phraseCount > 1 ? 'are' : 'is' } { phraseCount } phrase{ phraseCount > 1 ? 's' : ''} with { wordCount } word{ wordCount > 1 ? 's' : ''}{ phraseCount > 1 ? ' each' : ''}:
+      </h2>
+      
       <div>
         {generatedPhrases.map((phrase, index) => (
           <div key={index} className='phrase'>{ phrase.join( ' ' ) }</div>

@@ -30,6 +30,40 @@ a:visited {
   color: rgb(171, 227, 241);
 }
 
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Makes .App take at least the height of the viewport */
+  width: 100%;
+  align-items: center;
+}
+
+.App-header {
+  padding: 0.3rem;
+  padding-left: 0.7rem;
+  display: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  color: white;
+}
+
+.App-header a {
+  color: rgb(171, 227, 241);
+  text-decoration: underline;
+}
+
+.App-header a:visited {
+  color: rgb(171, 227, 241);
+}
+
+.App-footer {
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+}
 .content {
   flex: 1;
 }
@@ -77,36 +111,12 @@ a:visited {
   margin-bottom: 0.5rem;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Makes .App take at least the height of the viewport */
-  width: 100%;
-  align-items: center;
+footer {
+  color:  #999;
+  margin-left: 2rem;
 }
 
-.App-header {
-  padding: 0.3rem;
-  padding-left: 0.7rem;
-  display: center;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.9rem;
-  color: white;
-}
-
-.App-header a {
-  color: rgb(171, 227, 241);
-  text-decoration: underline;
-}
-
-.App-header a:visited {
-  color: rgb(171, 227, 241);
-}
-
-.App-footer {
-  padding: 20px;
-  text-align: left;
-  width: 100%;
+.copyright {
+  margin-top: 10px;
+  font-size: 0.9rem;
 }

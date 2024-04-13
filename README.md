@@ -1,9 +1,11 @@
 # diceware.org
-Diceware-inspired passphrase generator web app
+A simple web app that generates Diceware-inspired passphrases. See it in action at [diceware.org](https://diceware.org).
 
-## Available Scripts
+![diceware.org demo](diceware.org_demo.gif)
 
-In the project directory, you can run:
+## Developing locally
+
+From the project directory, run:
 
 ### `npm start`
 
@@ -25,13 +27,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

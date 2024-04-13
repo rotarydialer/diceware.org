@@ -1,13 +1,122 @@
-body {
+html, body {
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+  font-size: large;
+  line-height: 1.6;
+  color: #eee;
+  background-color: #06131a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+a {
+  color: rgb(171, 227, 241);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: rgb(171, 227, 241);
+}
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Makes .App take at least the height of the viewport */
+  width: 100%;
+  align-items: center;
+}
+
+.App-header {
+  padding: 0.3rem;
+  padding-left: 0.7rem;
+  display: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  color: white;
+}
+
+.App-header a {
+  color: rgb(171, 227, 241);
+  text-decoration: underline;
+}
+
+.App-header a:visited {
+  color: rgb(171, 227, 241);
+}
+
+.App-footer {
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+}
+.content {
+  flex: 1;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+}
+
+.sliders {  
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  width: 50%;
+  max-width: 40rem;
+}
+
+.phrases {
+  align-items: center;
+  width: 60%;
+  max-width: 43rem;
+}
+
+.siteTitle {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 0px;
+}
+
+.siteTagline {
+  font-size: large;
+}
+
+.phrasesHeader {
+  margin-top: 2rem;
+  justify-self: left;
+}
+
+.phrase {
+  font-size: larger;
+  margin-left: 1.83rem;
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  color:  #999;
+  margin-left: 2rem;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 0.9rem;
 }

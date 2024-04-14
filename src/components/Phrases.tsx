@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { generateNPhrases } from '../diceware';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCopy } from '@fortawesome/free-solid-svg-icons';
+import { Tooltip } from '@mantine/core';
 
 interface PhrasesProps {
   wordCount: number;
@@ -7,9 +10,29 @@ interface PhrasesProps {
 }
 
 const Phrases = React.memo(({ wordCount, phraseCount }: PhrasesProps) => {
-  if ( !wordCount || !phraseCount ) return;
+  const [tooltipOpenedIds, setTooltipOpenedIds] = useState<boolean[]>(Array(phraseCount).fill(false));
 
-  const generatedPhrases = generateNPhrases(phraseCount, wordCount);
+  useEffect(() => {
+    setTooltipOpenedIds(Array(phraseCount).fill(false));
+  }, [ phraseCount ]);
+
+  const copyToClipboard = (index: number, textToCopy: string) => {
+    navigator.clipboard.writeText(textToCopy.trim()).then(() => {
+      setTooltipOpenedIds(currentOpeneds => currentOpeneds.map((opened, idx) => idx === index ? true : opened));
+  
+      setTimeout(() => {
+        setTooltipOpenedIds(currentOpeneds => currentOpeneds.map((opened, idx) => idx === index ? false : opened));
+      }, 2000);
+    }).catch(err => {
+      console.error('Error copying text: ', err);
+    });
+  };
+
+  const generatedPhrases = useMemo(() => {
+    return generateNPhrases(phraseCount, wordCount);
+  }, [phraseCount, wordCount]);
+
+  if ( !wordCount || !phraseCount ) return;
 
   return (
     <div>
@@ -19,7 +42,18 @@ const Phrases = React.memo(({ wordCount, phraseCount }: PhrasesProps) => {
       
       <div>
         {generatedPhrases.map((phrase, index) => (
-          <div key={index} className='phrase'>{ phrase.join( ' ' ) }</div>
+          <div key={index} className='phrase'>
+            { phrase.join( ' ' ) }
+
+            <Tooltip
+              label="Copied!"
+              opened={tooltipOpenedIds[index]}
+              position="right"
+              withArrow
+            >
+              <FontAwesomeIcon icon={faCopy} className="copy-icon" onClick={() => copyToClipboard(index, phrase.join(' '))} />
+            </Tooltip>
+          </div>
         ))}
       </div>
     </div>

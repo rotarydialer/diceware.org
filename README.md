@@ -3,6 +3,8 @@ A simple web app that generates Diceware-inspired passphrases. See it in action 
 
 ![diceware.org demo](diceware.org_demo.gif)
 
+For a command line utility that does the same thing, see [dicegen](https://github.com/rotarydialer/dicegen).
+
 ## Developing locally
 
 From the project directory, run:

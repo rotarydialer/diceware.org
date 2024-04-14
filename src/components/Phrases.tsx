@@ -1,7 +1,12 @@
 import React from "react";
 import { generateNPhrases } from '../diceware';
 
-const Phrases = React.memo(({ wordCount, phraseCount }) => {
+interface PhrasesProps {
+  wordCount: number;
+  phraseCount: number;
+}
+
+const Phrases = React.memo(({ wordCount, phraseCount }: PhrasesProps) => {
   if ( !wordCount || !phraseCount ) return;
 
   const generatedPhrases = generateNPhrases(phraseCount, wordCount);
@@ -21,7 +26,7 @@ const Phrases = React.memo(({ wordCount, phraseCount }) => {
   )
 }, areEqual);
 
-function areEqual(prevProps, nextProps) {
+function areEqual(prevProps: PhrasesProps, nextProps: PhrasesProps) {
   return prevProps.wordCount === nextProps.wordCount &&
          prevProps.phraseCount === nextProps.phraseCount;
 }

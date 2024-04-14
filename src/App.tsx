@@ -1,6 +1,7 @@
+import React from 'react';
 import Wrapper from './components/Wrapper';
 
-function App() {
+function App(): JSX.Element {
   return (
     <div className="App">
       <header className="App-header">

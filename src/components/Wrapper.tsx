@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Phrases from './Phrases';
 import { Slider, Text, Box } from '@mantine/core';
 
-export default function Wrapper( props ) {
+export default function Wrapper( ) {
   const [numWords, setNumWords] = useState(4);
   const [endNumWords, setEndNumWords] = useState(4);
   

@@ -125,6 +125,15 @@ a:visited {
   cursor: pointer;
 }
 
+.refresh-icon {
+  margin-left: 0.36em;
+  color: #50504d;
+}
+
+.refresh-icon :hover {
+  color: rgb(171, 227, 241);
+}
+
 footer {
   color:  #999;
   margin-left: 2rem;

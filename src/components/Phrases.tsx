@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { generateNPhrases } from '../diceware';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy } from '@fortawesome/free-solid-svg-icons';
+import { faCopy, faRefresh } from '@fortawesome/free-solid-svg-icons';
 import { Tooltip } from '@mantine/core';
 
 interface PhrasesProps {
@@ -10,6 +10,7 @@ interface PhrasesProps {
 }
 
 const Phrases = React.memo(({ wordCount, phraseCount }: PhrasesProps) => {
+  const [refreshCount, setRefreshCount] = useState(0);
   const [tooltipOpenedIds, setTooltipOpenedIds] = useState<boolean[]>(Array(phraseCount).fill(false));
 
   useEffect(() => {
@@ -30,14 +31,15 @@ const Phrases = React.memo(({ wordCount, phraseCount }: PhrasesProps) => {
 
   const generatedPhrases = useMemo(() => {
     return generateNPhrases(phraseCount, wordCount);
-  }, [phraseCount, wordCount]);
+  }, [phraseCount, wordCount, refreshCount]);
 
   if ( !wordCount || !phraseCount ) return;
 
   return (
     <div>
       <h2 className="phrasesHeader">
-        Here { phraseCount > 1 ? 'are' : 'is' } { phraseCount } phrase{ phraseCount > 1 ? 's' : ''} with { wordCount } word{ wordCount > 1 ? 's' : ''}{ phraseCount > 1 ? ' each' : ''}:
+        Here { phraseCount > 1 ? 'are' : 'is' } { phraseCount } phrase{ phraseCount > 1 ? 's' : ''} with { wordCount } word{ wordCount > 1 ? 's' : ''}{ phraseCount > 1 ? ' each' : ''}: 
+        <span className="refresh-icon" onClick={() => setRefreshCount(count => count + 1)}><FontAwesomeIcon icon={faRefresh} /></span>
       </h2>
       
       <div>
